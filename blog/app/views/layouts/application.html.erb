@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Blog" %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-offset-12 col-md-12 col-lg-offset-12 col-lg-12 divider text-center">
+      <div class="well profile">
+        <div class="col-sm-20">
+            <div class="col-xs-12 col-sm-4 text-center">
+                <figure>
+                  <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
+                  <figcaption class="ratings">
+                    <p>User</p>
+                  </figcaption>   
+                </figure>
+            </div>
+          </div>            
+        <div class="col-xs-12 divider text-center">
+            <div class="navbar navbar-fixed-top">
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </a>
+                  <a class="brand" href="/posts">Blog</a>
+                  <div class="container nav-collapse">
+                    <ul class="nav nav-primary">
+                      <li><%= link_to "Google", "https://www.google.co.cr"  %></li>
+                      <li><%= link_to "Yammer", "https://www.yammer.com"  %></li>
+                      <li><%= link_to "dotcreek", "http://www.dotcreek.com"  %></li>
+                    </ul>
+                    <ul class="nav pull-right nav-links">
+                      <li class="top-link">
+                        <a href="/sessions">Login</a>
+                      </li>
+                      <li class="top-links">
+                        <a href="/register">Register</a>
+                      </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="containerFirst">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-3 col-lg-offset-3 col-lg-3">
+                   <div class="span">
+                   <%= bootstrap_flash %>
+                   <%= yield %>
+                   </div>
+                </div>
+            </div>                 
+          </div>
+      </div>
+  </div>
+  </div>
+</div> <!-- /container -->
+  </body>
+  </html>

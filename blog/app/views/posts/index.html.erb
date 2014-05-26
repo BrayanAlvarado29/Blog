@@ -1,0 +1,34 @@
+<br>
+<h1>New Blog -Rails-</h1>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <div id="posts">
+    <div>
+      <br>
+    </div>
+ <%= link_to '+New Post', new_post_path, :class => "btn btn-success" %>
+  <% @posts.each do|post| %>
+  <div id="post">
+    <h3><%= post.title %></h3>
+    <%= simple_format post.body %>
+     <strong>User:</strong>
+      <%= post.user.username %> 
+    </p>
+    <p>
+      <strong>Post Number:</strong>
+      <%= post.id %> 
+    </p>
+    <small>
+      <%= link_to 'Edit', edit_post_path(post) %> |
+      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </small>
+  </div>
+  <%= link_to 'Back', users_path %>
+  <% end %>
+</div>
+

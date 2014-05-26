@@ -1,0 +1,20 @@
+<%= form_for(:session) do |f| %>
+ <div class="field">
+    <%= f.label :username, :class =>"hidden" %><br>
+    <%= f.text_field :username, :placeholder =>"Username" %>
+ </div>
+ <div class="field">
+    <%= f.label :password, :class =>"hidden" %><br>
+    <%= f.password_field :password, :placeholder =>"Password"  %>
+ </div>
+  <div class="actions">
+    <%= f.submit :Login, :class => "btn btn-success :hover" %>
+  </div>
+   <div>
+   <br />
+  <footer >
+     <p>&copy; dotcreek 2014</p>
+  </footer>
+  </div>
+<% end %> 
+
